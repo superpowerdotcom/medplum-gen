@@ -30,6 +30,8 @@ generate/go: clean/go
 	openapi-generator generate \
 	--skip-validate-spec \
 	--package-name medplum \
+	--git-user-id superpowerdotcom \
+	--git-repo-id medplum-gen/build/go \
 	-i $(SPEC_FILE) \
 	-g go -o build/go || @echo "Failed to generate Go code"
 	$(RM) -r ./build/go/docs ./build/go/api
