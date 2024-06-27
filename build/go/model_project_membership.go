@@ -35,7 +35,7 @@ type ProjectMembership struct {
 	// A human-readable narrative that contains a summary of the resource and can be used to represent the content of the resource to a human. The narrative need not encode all the structured data, but is required to contain sufficient detail to make it \"clinically safe\" for a human to just read the narrative. Resource definitions may define what content should be represented in the narrative to ensure clinical safety.
 	Text *Narrative `json:"text,omitempty"`
 	// These resources do not have an independent existence apart from the resource that contains them - they cannot be identified independently, and nor can they have their own independent transaction scope.
-	Contained []Resource `json:"contained,omitempty"`
+	Contained []string `json:"contained,omitempty"`
 	// May be used to represent additional information that is not part of the basic definition of the resource. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.
 	Extension []Extension `json:"extension,omitempty"`
 	// May be used to represent additional information that is not part of the basic definition of the resource and that modifies the understanding of the element that contains it and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.  Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).
@@ -55,7 +55,7 @@ type ProjectMembership struct {
 	// The access policy for the user within the project memebership.
 	AccessPolicy *Reference `json:"accessPolicy,omitempty"`
 	// Extended access configuration using parameterized access policies.
-	Access []ProjectMembershipAccess `json:"access,omitempty"`
+	Access []string `json:"access,omitempty"`
 	// The user configuration for the user within the project memebership such as menu links, saved searches, and features.
 	UserConfiguration *Reference `json:"userConfiguration,omitempty"`
 	// Value of \"true\" or \"false\"
@@ -270,9 +270,9 @@ func (o *ProjectMembership) SetText(v Narrative) {
 }
 
 // GetContained returns the Contained field value if set, zero value otherwise.
-func (o *ProjectMembership) GetContained() []Resource {
+func (o *ProjectMembership) GetContained() []string {
 	if o == nil || IsNil(o.Contained) {
-		var ret []Resource
+		var ret []string
 		return ret
 	}
 	return o.Contained
@@ -280,7 +280,7 @@ func (o *ProjectMembership) GetContained() []Resource {
 
 // GetContainedOk returns a tuple with the Contained field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ProjectMembership) GetContainedOk() ([]Resource, bool) {
+func (o *ProjectMembership) GetContainedOk() ([]string, bool) {
 	if o == nil || IsNil(o.Contained) {
 		return nil, false
 	}
@@ -296,8 +296,8 @@ func (o *ProjectMembership) HasContained() bool {
 	return false
 }
 
-// SetContained gets a reference to the given []Resource and assigns it to the Contained field.
-func (o *ProjectMembership) SetContained(v []Resource) {
+// SetContained gets a reference to the given []string and assigns it to the Contained field.
+func (o *ProjectMembership) SetContained(v []string) {
 	o.Contained = v
 }
 
@@ -566,9 +566,9 @@ func (o *ProjectMembership) SetAccessPolicy(v Reference) {
 }
 
 // GetAccess returns the Access field value if set, zero value otherwise.
-func (o *ProjectMembership) GetAccess() []ProjectMembershipAccess {
+func (o *ProjectMembership) GetAccess() []string {
 	if o == nil || IsNil(o.Access) {
-		var ret []ProjectMembershipAccess
+		var ret []string
 		return ret
 	}
 	return o.Access
@@ -576,7 +576,7 @@ func (o *ProjectMembership) GetAccess() []ProjectMembershipAccess {
 
 // GetAccessOk returns a tuple with the Access field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ProjectMembership) GetAccessOk() ([]ProjectMembershipAccess, bool) {
+func (o *ProjectMembership) GetAccessOk() ([]string, bool) {
 	if o == nil || IsNil(o.Access) {
 		return nil, false
 	}
@@ -592,8 +592,8 @@ func (o *ProjectMembership) HasAccess() bool {
 	return false
 }
 
-// SetAccess gets a reference to the given []ProjectMembershipAccess and assigns it to the Access field.
-func (o *ProjectMembership) SetAccess(v []ProjectMembershipAccess) {
+// SetAccess gets a reference to the given []string and assigns it to the Access field.
+func (o *ProjectMembership) SetAccess(v []string) {
 	o.Access = v
 }
 

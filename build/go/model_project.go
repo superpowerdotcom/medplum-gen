@@ -35,7 +35,7 @@ type Project struct {
 	// A human-readable narrative that contains a summary of the resource and can be used to represent the content of the resource to a human. The narrative need not encode all the structured data, but is required to contain sufficient detail to make it \"clinically safe\" for a human to just read the narrative. Resource definitions may define what content should be represented in the narrative to ensure clinical safety.
 	Text *Narrative `json:"text,omitempty"`
 	// These resources do not have an independent existence apart from the resource that contains them - they cannot be identified independently, and nor can they have their own independent transaction scope.
-	Contained []Resource `json:"contained,omitempty"`
+	Contained []string `json:"contained,omitempty"`
 	// May be used to represent additional information that is not part of the basic definition of the resource. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.
 	Extension []Extension `json:"extension,omitempty"`
 	// May be used to represent additional information that is not part of the basic definition of the resource and that modifies the understanding of the element that contains it and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.  Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).
@@ -59,17 +59,17 @@ type Project struct {
 	// The default access policy for patients using open registration.
 	DefaultPatientAccessPolicy *Reference `json:"defaultPatientAccessPolicy,omitempty"`
 	// Option or parameter that can be adjusted within the Medplum Project to customize its behavior.
-	Setting []ProjectSetting `json:"setting,omitempty"`
+	Setting []string `json:"setting,omitempty"`
 	// Option or parameter that can be adjusted within the Medplum Project to customize its behavior, only visible to project administrators.
-	Secret []ProjectSetting `json:"secret,omitempty"`
+	Secret []string `json:"secret,omitempty"`
 	// Option or parameter that can be adjusted within the Medplum Project to customize its behavior, only modifiable by system administrators.
-	SystemSetting []ProjectSetting `json:"systemSetting,omitempty"`
+	SystemSetting []string `json:"systemSetting,omitempty"`
 	// Option or parameter that can be adjusted within the Medplum Project to customize its behavior, only visible to system administrators.
-	SystemSecret []ProjectSetting `json:"systemSecret,omitempty"`
+	SystemSecret []string `json:"systemSecret,omitempty"`
 	// Web application or web site that is associated with the project.
-	Site []ProjectSite `json:"site,omitempty"`
+	Site []string `json:"site,omitempty"`
 	// Linked Projects whose contents are made available to this one
-	Link []ProjectLink `json:"link,omitempty"`
+	Link []string `json:"link,omitempty"`
 }
 
 type _Project Project
@@ -277,9 +277,9 @@ func (o *Project) SetText(v Narrative) {
 }
 
 // GetContained returns the Contained field value if set, zero value otherwise.
-func (o *Project) GetContained() []Resource {
+func (o *Project) GetContained() []string {
 	if o == nil || IsNil(o.Contained) {
-		var ret []Resource
+		var ret []string
 		return ret
 	}
 	return o.Contained
@@ -287,7 +287,7 @@ func (o *Project) GetContained() []Resource {
 
 // GetContainedOk returns a tuple with the Contained field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Project) GetContainedOk() ([]Resource, bool) {
+func (o *Project) GetContainedOk() ([]string, bool) {
 	if o == nil || IsNil(o.Contained) {
 		return nil, false
 	}
@@ -303,8 +303,8 @@ func (o *Project) HasContained() bool {
 	return false
 }
 
-// SetContained gets a reference to the given []Resource and assigns it to the Contained field.
-func (o *Project) SetContained(v []Resource) {
+// SetContained gets a reference to the given []string and assigns it to the Contained field.
+func (o *Project) SetContained(v []string) {
 	o.Contained = v
 }
 
@@ -661,9 +661,9 @@ func (o *Project) SetDefaultPatientAccessPolicy(v Reference) {
 }
 
 // GetSetting returns the Setting field value if set, zero value otherwise.
-func (o *Project) GetSetting() []ProjectSetting {
+func (o *Project) GetSetting() []string {
 	if o == nil || IsNil(o.Setting) {
-		var ret []ProjectSetting
+		var ret []string
 		return ret
 	}
 	return o.Setting
@@ -671,7 +671,7 @@ func (o *Project) GetSetting() []ProjectSetting {
 
 // GetSettingOk returns a tuple with the Setting field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Project) GetSettingOk() ([]ProjectSetting, bool) {
+func (o *Project) GetSettingOk() ([]string, bool) {
 	if o == nil || IsNil(o.Setting) {
 		return nil, false
 	}
@@ -687,15 +687,15 @@ func (o *Project) HasSetting() bool {
 	return false
 }
 
-// SetSetting gets a reference to the given []ProjectSetting and assigns it to the Setting field.
-func (o *Project) SetSetting(v []ProjectSetting) {
+// SetSetting gets a reference to the given []string and assigns it to the Setting field.
+func (o *Project) SetSetting(v []string) {
 	o.Setting = v
 }
 
 // GetSecret returns the Secret field value if set, zero value otherwise.
-func (o *Project) GetSecret() []ProjectSetting {
+func (o *Project) GetSecret() []string {
 	if o == nil || IsNil(o.Secret) {
-		var ret []ProjectSetting
+		var ret []string
 		return ret
 	}
 	return o.Secret
@@ -703,7 +703,7 @@ func (o *Project) GetSecret() []ProjectSetting {
 
 // GetSecretOk returns a tuple with the Secret field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Project) GetSecretOk() ([]ProjectSetting, bool) {
+func (o *Project) GetSecretOk() ([]string, bool) {
 	if o == nil || IsNil(o.Secret) {
 		return nil, false
 	}
@@ -719,15 +719,15 @@ func (o *Project) HasSecret() bool {
 	return false
 }
 
-// SetSecret gets a reference to the given []ProjectSetting and assigns it to the Secret field.
-func (o *Project) SetSecret(v []ProjectSetting) {
+// SetSecret gets a reference to the given []string and assigns it to the Secret field.
+func (o *Project) SetSecret(v []string) {
 	o.Secret = v
 }
 
 // GetSystemSetting returns the SystemSetting field value if set, zero value otherwise.
-func (o *Project) GetSystemSetting() []ProjectSetting {
+func (o *Project) GetSystemSetting() []string {
 	if o == nil || IsNil(o.SystemSetting) {
-		var ret []ProjectSetting
+		var ret []string
 		return ret
 	}
 	return o.SystemSetting
@@ -735,7 +735,7 @@ func (o *Project) GetSystemSetting() []ProjectSetting {
 
 // GetSystemSettingOk returns a tuple with the SystemSetting field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Project) GetSystemSettingOk() ([]ProjectSetting, bool) {
+func (o *Project) GetSystemSettingOk() ([]string, bool) {
 	if o == nil || IsNil(o.SystemSetting) {
 		return nil, false
 	}
@@ -751,15 +751,15 @@ func (o *Project) HasSystemSetting() bool {
 	return false
 }
 
-// SetSystemSetting gets a reference to the given []ProjectSetting and assigns it to the SystemSetting field.
-func (o *Project) SetSystemSetting(v []ProjectSetting) {
+// SetSystemSetting gets a reference to the given []string and assigns it to the SystemSetting field.
+func (o *Project) SetSystemSetting(v []string) {
 	o.SystemSetting = v
 }
 
 // GetSystemSecret returns the SystemSecret field value if set, zero value otherwise.
-func (o *Project) GetSystemSecret() []ProjectSetting {
+func (o *Project) GetSystemSecret() []string {
 	if o == nil || IsNil(o.SystemSecret) {
-		var ret []ProjectSetting
+		var ret []string
 		return ret
 	}
 	return o.SystemSecret
@@ -767,7 +767,7 @@ func (o *Project) GetSystemSecret() []ProjectSetting {
 
 // GetSystemSecretOk returns a tuple with the SystemSecret field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Project) GetSystemSecretOk() ([]ProjectSetting, bool) {
+func (o *Project) GetSystemSecretOk() ([]string, bool) {
 	if o == nil || IsNil(o.SystemSecret) {
 		return nil, false
 	}
@@ -783,15 +783,15 @@ func (o *Project) HasSystemSecret() bool {
 	return false
 }
 
-// SetSystemSecret gets a reference to the given []ProjectSetting and assigns it to the SystemSecret field.
-func (o *Project) SetSystemSecret(v []ProjectSetting) {
+// SetSystemSecret gets a reference to the given []string and assigns it to the SystemSecret field.
+func (o *Project) SetSystemSecret(v []string) {
 	o.SystemSecret = v
 }
 
 // GetSite returns the Site field value if set, zero value otherwise.
-func (o *Project) GetSite() []ProjectSite {
+func (o *Project) GetSite() []string {
 	if o == nil || IsNil(o.Site) {
-		var ret []ProjectSite
+		var ret []string
 		return ret
 	}
 	return o.Site
@@ -799,7 +799,7 @@ func (o *Project) GetSite() []ProjectSite {
 
 // GetSiteOk returns a tuple with the Site field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Project) GetSiteOk() ([]ProjectSite, bool) {
+func (o *Project) GetSiteOk() ([]string, bool) {
 	if o == nil || IsNil(o.Site) {
 		return nil, false
 	}
@@ -815,15 +815,15 @@ func (o *Project) HasSite() bool {
 	return false
 }
 
-// SetSite gets a reference to the given []ProjectSite and assigns it to the Site field.
-func (o *Project) SetSite(v []ProjectSite) {
+// SetSite gets a reference to the given []string and assigns it to the Site field.
+func (o *Project) SetSite(v []string) {
 	o.Site = v
 }
 
 // GetLink returns the Link field value if set, zero value otherwise.
-func (o *Project) GetLink() []ProjectLink {
+func (o *Project) GetLink() []string {
 	if o == nil || IsNil(o.Link) {
-		var ret []ProjectLink
+		var ret []string
 		return ret
 	}
 	return o.Link
@@ -831,7 +831,7 @@ func (o *Project) GetLink() []ProjectLink {
 
 // GetLinkOk returns a tuple with the Link field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Project) GetLinkOk() ([]ProjectLink, bool) {
+func (o *Project) GetLinkOk() ([]string, bool) {
 	if o == nil || IsNil(o.Link) {
 		return nil, false
 	}
@@ -847,8 +847,8 @@ func (o *Project) HasLink() bool {
 	return false
 }
 
-// SetLink gets a reference to the given []ProjectLink and assigns it to the Link field.
-func (o *Project) SetLink(v []ProjectLink) {
+// SetLink gets a reference to the given []string and assigns it to the Link field.
+func (o *Project) SetLink(v []string) {
 	o.Link = v
 }
 

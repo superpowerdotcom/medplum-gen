@@ -35,7 +35,7 @@ type UserConfiguration struct {
 	// A human-readable narrative that contains a summary of the resource and can be used to represent the content of the resource to a human. The narrative need not encode all the structured data, but is required to contain sufficient detail to make it \"clinically safe\" for a human to just read the narrative. Resource definitions may define what content should be represented in the narrative to ensure clinical safety.
 	Text *Narrative `json:"text,omitempty"`
 	// These resources do not have an independent existence apart from the resource that contains them - they cannot be identified independently, and nor can they have their own independent transaction scope.
-	Contained []Resource `json:"contained,omitempty"`
+	Contained []string `json:"contained,omitempty"`
 	// May be used to represent additional information that is not part of the basic definition of the resource. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.
 	Extension []Extension `json:"extension,omitempty"`
 	// May be used to represent additional information that is not part of the basic definition of the resource and that modifies the understanding of the element that contains it and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.  Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).
@@ -43,11 +43,11 @@ type UserConfiguration struct {
 	// A sequence of Unicode characters
 	Name *string `json:"name,omitempty"`
 	// Optional menu of shortcuts to URLs.
-	Menu []UserConfigurationMenu `json:"menu,omitempty"`
+	Menu []string `json:"menu,omitempty"`
 	// Shortcut links to URLs.
-	Search []UserConfigurationSearch `json:"search,omitempty"`
+	Search []string `json:"search,omitempty"`
 	// User options that control the display of the application.
-	Option []UserConfigurationOption `json:"option,omitempty"`
+	Option []string `json:"option,omitempty"`
 }
 
 type _UserConfiguration UserConfiguration
@@ -255,9 +255,9 @@ func (o *UserConfiguration) SetText(v Narrative) {
 }
 
 // GetContained returns the Contained field value if set, zero value otherwise.
-func (o *UserConfiguration) GetContained() []Resource {
+func (o *UserConfiguration) GetContained() []string {
 	if o == nil || IsNil(o.Contained) {
-		var ret []Resource
+		var ret []string
 		return ret
 	}
 	return o.Contained
@@ -265,7 +265,7 @@ func (o *UserConfiguration) GetContained() []Resource {
 
 // GetContainedOk returns a tuple with the Contained field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UserConfiguration) GetContainedOk() ([]Resource, bool) {
+func (o *UserConfiguration) GetContainedOk() ([]string, bool) {
 	if o == nil || IsNil(o.Contained) {
 		return nil, false
 	}
@@ -281,8 +281,8 @@ func (o *UserConfiguration) HasContained() bool {
 	return false
 }
 
-// SetContained gets a reference to the given []Resource and assigns it to the Contained field.
-func (o *UserConfiguration) SetContained(v []Resource) {
+// SetContained gets a reference to the given []string and assigns it to the Contained field.
+func (o *UserConfiguration) SetContained(v []string) {
 	o.Contained = v
 }
 
@@ -383,9 +383,9 @@ func (o *UserConfiguration) SetName(v string) {
 }
 
 // GetMenu returns the Menu field value if set, zero value otherwise.
-func (o *UserConfiguration) GetMenu() []UserConfigurationMenu {
+func (o *UserConfiguration) GetMenu() []string {
 	if o == nil || IsNil(o.Menu) {
-		var ret []UserConfigurationMenu
+		var ret []string
 		return ret
 	}
 	return o.Menu
@@ -393,7 +393,7 @@ func (o *UserConfiguration) GetMenu() []UserConfigurationMenu {
 
 // GetMenuOk returns a tuple with the Menu field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UserConfiguration) GetMenuOk() ([]UserConfigurationMenu, bool) {
+func (o *UserConfiguration) GetMenuOk() ([]string, bool) {
 	if o == nil || IsNil(o.Menu) {
 		return nil, false
 	}
@@ -409,15 +409,15 @@ func (o *UserConfiguration) HasMenu() bool {
 	return false
 }
 
-// SetMenu gets a reference to the given []UserConfigurationMenu and assigns it to the Menu field.
-func (o *UserConfiguration) SetMenu(v []UserConfigurationMenu) {
+// SetMenu gets a reference to the given []string and assigns it to the Menu field.
+func (o *UserConfiguration) SetMenu(v []string) {
 	o.Menu = v
 }
 
 // GetSearch returns the Search field value if set, zero value otherwise.
-func (o *UserConfiguration) GetSearch() []UserConfigurationSearch {
+func (o *UserConfiguration) GetSearch() []string {
 	if o == nil || IsNil(o.Search) {
-		var ret []UserConfigurationSearch
+		var ret []string
 		return ret
 	}
 	return o.Search
@@ -425,7 +425,7 @@ func (o *UserConfiguration) GetSearch() []UserConfigurationSearch {
 
 // GetSearchOk returns a tuple with the Search field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UserConfiguration) GetSearchOk() ([]UserConfigurationSearch, bool) {
+func (o *UserConfiguration) GetSearchOk() ([]string, bool) {
 	if o == nil || IsNil(o.Search) {
 		return nil, false
 	}
@@ -441,15 +441,15 @@ func (o *UserConfiguration) HasSearch() bool {
 	return false
 }
 
-// SetSearch gets a reference to the given []UserConfigurationSearch and assigns it to the Search field.
-func (o *UserConfiguration) SetSearch(v []UserConfigurationSearch) {
+// SetSearch gets a reference to the given []string and assigns it to the Search field.
+func (o *UserConfiguration) SetSearch(v []string) {
 	o.Search = v
 }
 
 // GetOption returns the Option field value if set, zero value otherwise.
-func (o *UserConfiguration) GetOption() []UserConfigurationOption {
+func (o *UserConfiguration) GetOption() []string {
 	if o == nil || IsNil(o.Option) {
-		var ret []UserConfigurationOption
+		var ret []string
 		return ret
 	}
 	return o.Option
@@ -457,7 +457,7 @@ func (o *UserConfiguration) GetOption() []UserConfigurationOption {
 
 // GetOptionOk returns a tuple with the Option field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UserConfiguration) GetOptionOk() ([]UserConfigurationOption, bool) {
+func (o *UserConfiguration) GetOptionOk() ([]string, bool) {
 	if o == nil || IsNil(o.Option) {
 		return nil, false
 	}
@@ -473,8 +473,8 @@ func (o *UserConfiguration) HasOption() bool {
 	return false
 }
 
-// SetOption gets a reference to the given []UserConfigurationOption and assigns it to the Option field.
-func (o *UserConfiguration) SetOption(v []UserConfigurationOption) {
+// SetOption gets a reference to the given []string and assigns it to the Option field.
+func (o *UserConfiguration) SetOption(v []string) {
 	o.Option = v
 }
 

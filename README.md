@@ -30,3 +30,26 @@ specified in the openapi.json file).
 Update `./version` to reflect the new version.
 
 Run `make generate` to generate new code.
+
+## 1.0.5
+
+1. 06.26.2024
+  - Had to remove undefined definitions from API spec
+
+```bash
+#/components/schemas/AccessPolicyIpAccessRule
+#/components/schemas/AccessPolicyResource
+#/components/schemas/AgentChannel
+#/components/schemas/AgentSetting
+#/components/schemas/BulkDataExportDeleted
+#/components/schemas/BulkDataExportError
+#/components/schemas/BulkDataExportOutput
+#/components/schemas/ProjectLink
+#/components/schemas/ProjectMembershipAccess
+#/components/schemas/ProjectSetting
+#/components/schemas/ProjectSite
+#/components/schemas/Resource
+#/components/schemas/UserConfigurationMenu
+#/components/schemas/UserConfigurationOption
+#/components/schemas/UserConfigurationSearch
+```

@@ -51664,9 +51664,6 @@
           },
           "contained": {
             "description": "These resources do not have an independent existence apart from the resource that contains them - they cannot be identified independently, and nor can they have their own independent transaction scope.",
-            "items": {
-              "$ref": "#/components/schemas/Resource"
-            },
             "type": "array"
           },
           "extension": {
@@ -51735,44 +51732,26 @@
           },
           "setting": {
             "description": "Option or parameter that can be adjusted within the Medplum Project to customize its behavior.",
-            "items": {
-              "$ref": "#/components/schemas/ProjectSetting"
-            },
             "type": "array"
           },
           "secret": {
             "description": "Option or parameter that can be adjusted within the Medplum Project to customize its behavior, only visible to project administrators.",
-            "items": {
-              "$ref": "#/components/schemas/ProjectSetting"
-            },
             "type": "array"
           },
           "systemSetting": {
             "description": "Option or parameter that can be adjusted within the Medplum Project to customize its behavior, only modifiable by system administrators.",
-            "items": {
-              "$ref": "#/components/schemas/ProjectSetting"
-            },
             "type": "array"
           },
           "systemSecret": {
             "description": "Option or parameter that can be adjusted within the Medplum Project to customize its behavior, only visible to system administrators.",
-            "items": {
-              "$ref": "#/components/schemas/ProjectSetting"
-            },
             "type": "array"
           },
           "site": {
             "description": "Web application or web site that is associated with the project.",
-            "items": {
-              "$ref": "#/components/schemas/ProjectSite"
-            },
             "type": "array"
           },
           "link": {
             "description": "Linked Projects whose contents are made available to this one",
-            "items": {
-              "$ref": "#/components/schemas/ProjectLink"
-            },
             "type": "array"
           }
         },
@@ -51876,9 +51855,6 @@
           },
           "contained": {
             "description": "These resources do not have an independent existence apart from the resource that contains them - they cannot be identified independently, and nor can they have their own independent transaction scope.",
-            "items": {
-              "$ref": "#/components/schemas/Resource"
-            },
             "type": "array"
           },
           "extension": {
@@ -51925,9 +51901,6 @@
           },
           "access": {
             "description": "Extended access configuration using parameterized access policies.",
-            "items": {
-              "$ref": "#/components/schemas/ProjectMembershipAccess"
-            },
             "type": "array"
           },
           "userConfiguration": {
@@ -51976,9 +51949,6 @@
           },
           "contained": {
             "description": "These resources do not have an independent existence apart from the resource that contains them - they cannot be identified independently, and nor can they have their own independent transaction scope.",
-            "items": {
-              "$ref": "#/components/schemas/Resource"
-            },
             "type": "array"
           },
           "extension": {
@@ -52070,9 +52040,6 @@
           },
           "contained": {
             "description": "These resources do not have an independent existence apart from the resource that contains them - they cannot be identified independently, and nor can they have their own independent transaction scope.",
-            "items": {
-              "$ref": "#/components/schemas/Resource"
-            },
             "type": "array"
           },
           "extension": {
@@ -52173,9 +52140,6 @@
           },
           "contained": {
             "description": "These resources do not have an independent existence apart from the resource that contains them - they cannot be identified independently, and nor can they have their own independent transaction scope.",
-            "items": {
-              "$ref": "#/components/schemas/Resource"
-            },
             "type": "array"
           },
           "extension": {
@@ -52328,9 +52292,6 @@
           },
           "contained": {
             "description": "These resources do not have an independent existence apart from the resource that contains them - they cannot be identified independently, and nor can they have their own independent transaction scope.",
-            "items": {
-              "$ref": "#/components/schemas/Resource"
-            },
             "type": "array"
           },
           "extension": {
@@ -52407,9 +52368,6 @@
           },
           "contained": {
             "description": "These resources do not have an independent existence apart from the resource that contains them - they cannot be identified independently, and nor can they have their own independent transaction scope.",
-            "items": {
-              "$ref": "#/components/schemas/Resource"
-            },
             "type": "array"
           },
           "extension": {
@@ -52531,9 +52489,6 @@
           },
           "contained": {
             "description": "These resources do not have an independent existence apart from the resource that contains them - they cannot be identified independently, and nor can they have their own independent transaction scope.",
-            "items": {
-              "$ref": "#/components/schemas/Resource"
-            },
             "type": "array"
           },
           "extension": {
@@ -52661,9 +52616,6 @@
           },
           "contained": {
             "description": "These resources do not have an independent existence apart from the resource that contains them - they cannot be identified independently, and nor can they have their own independent transaction scope.",
-            "items": {
-              "$ref": "#/components/schemas/Resource"
-            },
             "type": "array"
           },
           "extension": {
@@ -52690,16 +52642,10 @@
           },
           "resource": {
             "description": "Access details for a resource type.",
-            "items": {
-              "$ref": "#/components/schemas/AccessPolicyResource"
-            },
             "type": "array"
           },
           "ipAccessRule": {
             "description": "Use IP Access Rules to allowlist, block, and challenge traffic based on the visitor IP address.",
-            "items": {
-              "$ref": "#/components/schemas/AccessPolicyIpAccessRule"
-            },
             "type": "array"
           }
         },
@@ -52783,9 +52729,6 @@
           },
           "contained": {
             "description": "These resources do not have an independent existence apart from the resource that contains them - they cannot be identified independently, and nor can they have their own independent transaction scope.",
-            "items": {
-              "$ref": "#/components/schemas/Resource"
-            },
             "type": "array"
           },
           "extension": {
@@ -52808,23 +52751,14 @@
           },
           "menu": {
             "description": "Optional menu of shortcuts to URLs.",
-            "items": {
-              "$ref": "#/components/schemas/UserConfigurationMenu"
-            },
             "type": "array"
           },
           "search": {
             "description": "Shortcut links to URLs.",
-            "items": {
-              "$ref": "#/components/schemas/UserConfigurationSearch"
-            },
             "type": "array"
           },
           "option": {
             "description": "User options that control the display of the application.",
-            "items": {
-              "$ref": "#/components/schemas/UserConfigurationOption"
-            },
             "type": "array"
           }
         },
@@ -53040,9 +52974,6 @@
           },
           "contained": {
             "description": "These resources do not have an independent existence apart from the resource that contains them - they cannot be identified independently, and nor can they have their own independent transaction scope.",
-            "items": {
-              "$ref": "#/components/schemas/Resource"
-            },
             "type": "array"
           },
           "extension": {
@@ -53086,23 +53017,14 @@
           },
           "output": {
             "description": "An array of file items with one entry for each generated file. If no resources are returned from the kick-off request, the server SHOULD return an empty array.",
-            "items": {
-              "$ref": "#/components/schemas/BulkDataExportOutput"
-            },
             "type": "array"
           },
           "deleted": {
             "description": "An array of deleted file items following the same structure as the output array.",
-            "items": {
-              "$ref": "#/components/schemas/BulkDataExportDeleted"
-            },
             "type": "array"
           },
           "error": {
             "description": "Array of message file items following the same structure as the output array.",
-            "items": {
-              "$ref": "#/components/schemas/BulkDataExportError"
-            },
             "type": "array"
           }
         },
@@ -53197,9 +53119,6 @@
           },
           "contained": {
             "description": "These resources do not have an independent existence apart from the resource that contains them - they cannot be identified independently, and nor can they have their own independent transaction scope.",
-            "items": {
-              "$ref": "#/components/schemas/Resource"
-            },
             "type": "array"
           },
           "extension": {
@@ -53259,9 +53178,6 @@
           },
           "contained": {
             "description": "These resources do not have an independent existence apart from the resource that contains them - they cannot be identified independently, and nor can they have their own independent transaction scope.",
-            "items": {
-              "$ref": "#/components/schemas/Resource"
-            },
             "type": "array"
           },
           "extension": {
@@ -53347,9 +53263,6 @@
           },
           "contained": {
             "description": "These resources do not have an independent existence apart from the resource that contains them - they cannot be identified independently, and nor can they have their own independent transaction scope.",
-            "items": {
-              "$ref": "#/components/schemas/Resource"
-            },
             "type": "array"
           },
           "extension": {
@@ -53429,9 +53342,6 @@
           },
           "contained": {
             "description": "These resources do not have an independent existence apart from the resource that contains them - they cannot be identified independently, and nor can they have their own independent transaction scope.",
-            "items": {
-              "$ref": "#/components/schemas/Resource"
-            },
             "type": "array"
           },
           "extension": {
@@ -53473,16 +53383,10 @@
           },
           "setting": {
             "description": "The settings for the agent.",
-            "items": {
-              "$ref": "#/components/schemas/AgentSetting"
-            },
             "type": "array"
           },
           "channel": {
             "description": "Details where to send notifications when resources are received that meet the criteria.",
-            "items": {
-              "$ref": "#/components/schemas/AgentChannel"
-            },
             "type": "array"
           }
         },
@@ -53586,9 +53490,6 @@
           },
           "contained": {
             "description": "These resources do not have an independent existence apart from the resource that contains them - they cannot be identified independently, and nor can they have their own independent transaction scope.",
-            "items": {
-              "$ref": "#/components/schemas/Resource"
-            },
             "type": "array"
           },
           "extension": {
