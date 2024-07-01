@@ -7,8 +7,8 @@ jobs:
     name: Validate spec
     runs-on: ubuntu-latest
     steps:
-    - name: Install openapi-generator
-      run: sudo apt-get update && sudo apt-get install -y openapi-generator-cli
+    - name: Install openapi-generator-cli
+      run: sudo make setup
 
     - uses: actions/checkout@v2
 
