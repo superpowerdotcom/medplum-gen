@@ -11,7 +11,6 @@ Repo containing generated code for the Medplum API.
 
 * `make help` to list available targets.
 * `make generate` to run all generators.
-* `make generate/go` to run just the Go generator.
 * `make clean` to remove all generated code artifacts.
 
 ## Structure
@@ -24,17 +23,16 @@ Current version of the spec file generated code is using is saved under `./versi
 ## Flow
 
 When Medplum updates their OpenAPI spec, download the `openapi.json` file and
-save it under `./specs/0_0_0.json` (replace 0's with actual `openapi` version
-specified in the openapi.json file).
+save it under `./specs/0_0_0.json` (replace 0's with actual version specified in
+in `openapi` field).
 
 Update `./version` to reflect the new version.
 
 Run `make generate` to generate new code.
 
-## 1.0.5
+## `1_0_5.json` || 06.26.2024
 
-1. 06.26.2024
-  - Had to remove undefined definitions from API spec
+* Removed undefined definitions in spec file
 
 ```bash
 #/components/schemas/AccessPolicyIpAccessRule

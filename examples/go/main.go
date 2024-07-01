@@ -5,11 +5,11 @@ import (
 	"fmt"
 	"log"
 
-	medplum "github.com/superpowerdotcom/medplum-gen/build/go"
+	gen "github.com/superpowerdotcom/medplum-gen/build/go"
 )
 
 func main() {
-	od := &medplum.ObservationDefinition{
+	od := &gen.ObservationDefinition{
 		Id: StrPtr("123"),
 	}
 
