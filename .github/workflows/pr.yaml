@@ -7,10 +7,10 @@ jobs:
     name: Validate spec
     runs-on: ubuntu-latest
     steps:
+    - uses: actions/checkout@v2
+
     - name: Install openapi-generator-cli
       run: sudo make setup
-
-    - uses: actions/checkout@v2
 
     - name: Validate
       run: make validate
