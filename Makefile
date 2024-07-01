@@ -23,6 +23,13 @@ setup: description = Install dependencies necessary for codegen
 setup:
 	brew install openapi-generator
 
+### Test
+
+.PHONY: validate
+validate: description = Validate spec file
+validate:
+	openapi-generator validate -i $(SPEC_FILE)
+
 ### Build
 
 .PHONY: generate
