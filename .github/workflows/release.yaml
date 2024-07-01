@@ -10,18 +10,17 @@ jobs:
     if: ${{ !contains(github.event.head_commit.message, 'norelease') }}
     runs-on: ubuntu-latest
     steps:
-      - name: Install openapi-generator
-        run: sudo apt-get update && sudo apt-get install -y openapi-generator
-
       - uses: actions/checkout@main
+
+      - name: Install openapi-generator-cli
+        run: sudo make setup
 
       - name: Validate
         run: make validate
 
       - name: Generate new tag
         uses: mathieudutour/github-tag-action@v6.1
-        id: get_new_version
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           fetch_all_tags: true
-          tag_prefix: "libs/protos/v"
+          tag_prefix: "build/go/v"

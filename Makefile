@@ -1,3 +1,4 @@
+OPENAPI_GENERATOR_BIN ?= openapi-generator-cli
 SPEC_FILE ?= specs/$(SPEC_VERSION).json
 SPEC_VERSION ?= $(shell cat version | sed 's/\./_/g')
 GO_BUILD_DIR ?= ./build/go
@@ -21,14 +22,16 @@ help:
 .PHONY: setup
 setup: description = Install dependencies necessary for codegen
 setup:
-	brew install openapi-generator
+	mkdir -p /usr/local/bin && \
+    curl https://raw.githubusercontent.com/OpenAPITools/openapi-generator/master/bin/utils/openapi-generator-cli.sh > /usr/local/bin/openapi-generator-cli && \
+    chmod +x /usr/local/bin/openapi-generator-cli
 
 ### Test
 
 .PHONY: validate
 validate: description = Validate spec file
 validate:
-	openapi-generator validate -i $(SPEC_FILE)
+	$(OPENAPI_GENERATOR_BIN) validate -i $(SPEC_FILE)
 
 ### Build
 
@@ -40,7 +43,7 @@ generate: generate/go
 generate/go: description = Generate Go code from Medplum OpenAPI spec
 generate/go: clean/go
 	mkdir -p $(GO_BUILD_DIR)
-	openapi-generator generate \
+	$(OPENAPI_GENERATOR_BIN) generate \
 	--skip-validate-spec \
 	--package-name medplum \
 	--git-user-id superpowerdotcom \
