@@ -40,7 +40,7 @@ generate/go: clean/go
 	--git-repo-id medplum-gen/build/go \
 	--global-property models,supportingFiles,apis=false,modelDocs=false \
 	-i $(SPEC_FILE) \
-	-g go -o $(GO_BUILD_DIR) || @echo "Failed to generate Go code"
+	-g go -o $(GO_BUILD_DIR) || (echo ">> ERROR: Failed to generate Go code" && exit 1)
 
 	# Remove unnecessary files/docs/etc.
 	$(RM) -r $(GO_BUILD_DIR)/docs \
@@ -59,7 +59,7 @@ generate/go: clean/go
 	echo "<sub>\`make generate/go\` ran at \`$(DATE)\`.</sub>" >> $(GO_BUILD_DIR)/README.md.tmp
 	mv -f $(GO_BUILD_DIR)/README.md.tmp $(GO_BUILD_DIR)/README.md
 
-.PHONYL clean
+.PHONY: clean
 clean: description = Remove ALL build artifacts
 clean: clean/go
 
