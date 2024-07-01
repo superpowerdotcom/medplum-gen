@@ -24,7 +24,7 @@ setup: description = Install dependencies necessary for codegen
 setup:
 	mkdir -p /usr/local/bin && \
     curl https://raw.githubusercontent.com/OpenAPITools/openapi-generator/master/bin/utils/openapi-generator-cli.sh > /usr/local/bin/openapi-generator-cli && \
-    chmod u+x /usr/local/bin/openapi-generator-cli
+    chmod +x /usr/local/bin/openapi-generator-cli
 
 ### Test
 
